@@ -1,0 +1,35 @@
+
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "g++",
+      "command": "g++",
+      "args": [
+        "-g",
+        "${file}",
+        "${fileDirname}/class/func.h",
+        "${fileDirname}/class/stu.h",
+        "${fileDirname}/func/func.cpp",
+        "-o",
+        "${workspaceFolder}/${workspaceRootFolderName}.exe"
+      ],
+      "problemMatcher": {
+        "owner": "cpp",
+        "fileLocation": ["relative", "${workspaceRoot}"],
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        }
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
