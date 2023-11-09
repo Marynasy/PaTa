@@ -9,8 +9,10 @@ int main()
 {
 	Player Pc;
 	Floor F_Pc;
+	Enemy Chimera;
+	Chimera.Em_Name = "∆Ê√¿¿≠";
 	//enum {start=1,load,log,exit=0} StartSelect = start;
-	enum {menu=1,fight,exit=0} Mode = menu;
+	enum {menu=1,load,fight,exit=0} Mode = fight;
 	int Select = 1;
 	while(Select != 0 || Mode !=0)
 	{
@@ -107,6 +109,17 @@ int main()
 			cout << "πßœ≤Õ®πÿ£°" << endl;
 			system("pause>nul");
 			Mode = menu;
+			break;
+		case 3:
+			cout << "******≤‚ ‘’Ω∂∑******" << endl;
+			system("pause>nul");
+			Pc.Pl_Name = "¬Í¿ˆ";
+			Pc.Pl_ExAtk = 1;
+			F_Pc.FloorNum = 1;
+			F_Pc.EnterFight(Pc, Chimera);
+			Pc.BeDamaged(F_Pc.FloorDmg);
+			cout << "****** £”‡HP:"<< Pc.Pl_Hp << "******"<< endl;
+			system("pause>nul");
 			break;
 		default:
 			break;

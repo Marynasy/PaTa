@@ -30,6 +30,15 @@ public:
 	void CharaNameSet();
 	void CharaDiffcultSet();
 	void StateMenu();
+	void BeDamaged(int Damage);
+	double GetAtk();//获取当前攻击力
+	double GetDef();//获取当前防御力
+	int GetBaseAtkCoe();//基础攻击系数
+	int GetExAtkCoe();//额外攻击系数
+	int GetFinalAtkCoe();//最终攻击系数
+	int GetBaseDefCoe();//基础防御系数
+	int GetExDefCoe();//额外防御系数
+	int GetFinalDefCoe();//最终攻击系数
 };
 //玩家角色
 
@@ -37,12 +46,15 @@ class Enemy
 {
 public:
 	string Em_Name;
-	int Em_Lv;
-	int Em_Exp;
-	int Em_MaxHp;
-	int Em_Hp;
-	int Em_Atk;
-	int Em_Def;
+	int Em_Lv = 1;//默认等级
+	int Em_Exp = 0;//默认经验值？怪怎么也有经验值？？
+	int Em_MaxHp = 100;//最大生命值
+	int Em_Hp = 100;//现有生命值
+	int Em_Atk = 10;//基础攻击力
+	int Em_Def = 10;//基础防御力
+	void BeDamaged(int Damage);
+	double GetAtk();
+	double GetDef();
 };
 
 class EnemyBooks
@@ -55,5 +67,10 @@ class Floor
 {
 public:
 	int FloorNum = 0;
+	int TurnNum = 1;
+	int FloorDmg = 0;
+	int EnterFight(Player abs,Enemy E_abs);
+	int PlTryAtk(Player abs, Enemy E_abs);
+	int EmTryAtk(Player abs, Enemy E_abs);
 };
 //楼层

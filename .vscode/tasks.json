@@ -11,6 +11,8 @@
         "${fileDirname}/class/func.h",
         "${fileDirname}/class/stu.h",
         "${fileDirname}/func/func.cpp",
+        "${fileDirname}/class/fight.h",
+        "${fileDirname}/func/fight.cpp",
         "-o",
         "${workspaceFolder}/${workspaceRootFolderName}.exe"
       ],
